@@ -1,1 +1,13 @@
 @import 'tailwind.css';
+
+/* @font-face {
+    font-family: dungenmo;
+    src: url("./neodgm.ttf");
+} */
+* {
+    border-radius: 10px;
+}
+
+/* body{
+	font-family:dungenmo;
+} */
