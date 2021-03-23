@@ -50,3 +50,11 @@
 
 ### Day4
 - [ ] 구매 여부에 따른 동작 구현 ()
+
+
+## ETC
+Commit Message Rule
+- [update] 모든 코드 및 파일의 수정
+- [add] 새로운 파일 추가
+- [delete] 기존 파일 삭제
+- [refactor] 코드의 전면 수정
