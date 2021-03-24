@@ -8,70 +8,69 @@
 </head>
 
 <body>
-    <!-- <div class="wrapper">
-        <div class="my-16 flex-col text-center m-auto ">
-            <div class="flex justify-between w-6/12 m-auto	">
-                <button class="bg-cover	emptyStar"></button>
-                <input type="text" name="" id="" class="ml-2 border-2 rounded border-blue-500 w-full" />
-                <button
-                    class="ml-2 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75">
-                    검색
-                </button>
-            </div>
+    <div class="border-dashed wrapper border-4 mt-6 mx-56 border-yellow-400 text-center text-4xl shadow-md font-mono">
+        ☻ 
+        <span style="color: red">T</span><span style="color: rgb(252, 184, 59)">A</span><span style="color: rgb(255, 232, 55)">M</span><span style="color: rgb(50, 160, 50)">I</span>
+        <span style="color: rgb(76, 76, 240)"> A</span><span style="color: rgb(39, 39, 109)">N</span><span style="color: rgb(135, 52, 135)">D</span>
+        <span style="color: rgb(249, 75, 75)"> Y</span><span style="color: rgb(252, 184, 59)">O</span><span style="color: rgb(255, 232, 55)">U</span><span style="color: rgb(50, 160, 50)">N</span><span style="color: rgb(76, 76, 240)">G</span>
+        <span style="color: rgb(186, 151, 227)">CAFE</span>
+        ☻
+    </div>
+    <div class="container wrapper mt-4 mx-32 flex justify-around text-center font-mono">
 
-            <div class="flex divide-x-2 w-6/12 m-auto my-6 border-t-2 border-b-2 py-2">
-                <div class="rounded-full bg-yellow-200 w-1/4 mx-4">코인명</div>
-                <div class="rounded-full bg-yellow-200 w-1/4 mx-4">가격</div>
-                <div class="rounded-full bg-yellow-200 w-1/4 mx-4">등락률</div>
-                <div class="rounded-full bg-yellow-200 w-1/4 mx-4">거래대금</div>
-            </div>
-            <div id="board" class="divide-y-2 divide-dashed divide-yellow-500 w-6/12 m-auto border-4 border-indigo-200">
-
-            </div>
-        </div>
-    </div> -->
-    <div class="border-dashed border-4 mt-6 mx-56 border-yellow-400 text-center text-5xl shadow-md">☻ tami and yong dessert ☻</div>
-    <div class="container mt-4 flex justify-evenly text-center font-mono">
-
-        <div class="vending">
-            <div class="vending__nav my-6">
+        <div class="vending w-1/3 mx-4">
+            <div class="vending__nav my-6 text-2xl">
                 <div class="vending__title p-3 border-4 border-red-500 shadow-md">
-                    상품화면
+                    🥨 dessert
                 </div>
             </div>
-            <div class="vending__box p-3 border-4 border-blue-400 flex justify-between flex-wrap">
+            <div class="vending__box h-auto p-3 border-4 border-blue-400 flex justify-between flex-wrap">
             </div>
         </div>
     
-        <div class="screen">
-            <div class="screen__nav my-6">
+        <div class="screen w-1/3 mx-4">
+            <div class="screen__nav my-6 text-2xl">
                 <div class="screen__title p-3 border-4 border-red-500 shadow-md">
-                    진행화면
+                    🕹 screen
                 </div>
             </div>
-            <div class="screen__box p-3 border-4 border-blue-400  flex flex-col flex-wrap">
-                <div class="screen__money border-4 my-3 border-yellow-100">
-                    <input class="ending__money-inp text-2xl" type="text" placeholder="동전"/>
+            <div class="screen__box h-auto p-3 border-4 border-blue-400  flex flex-col flex-wrap">
+                <div class="screen__inpMoney border-4 my-3 border-yellow-100">
+                    <input class="ending__money-inp text-2xl" type="text" placeholder="coin"/>
                 </div>
                 <div class="screen__button border-4 my-3 border-yellow-100 text-lg">
-                    <button class="container mx-auto screen__btn bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500" type="button">반환</button>
+                    <button class="container mx-auto screen__btn bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 rounded-md" type="button">🪙 changes (반환)</button>
                     
                 </div>
-                <div class="screen__message border-4 my-3 border-yellow-100 text-lg">
-                    <div class="screen__title bg-yellow-100">✎ message box</div>
-                    <div class="screen__message h-2/3"></div>
-                    안녕
+                <div class="screen__message h-48 border-4 my-3 border-yellow-100 text-lg">
+                    <div class="screen__title bg-yellow-100 rounded-md">✎ message</div>
+                    <div class="screen__message"></div>
                 </div>
             </div>
         </div>
     
-        <div class="money">
-            <div class="money__nav my-6">
+        <div class="money w-1/3 mx-4">
+            <div class="money__nav my-6 text-2xl">
                 <div class="money__title p-3 border-4 border-red-500 shadow-md">
-                    지갑화면
+                    💵 wallet
                 </div>
             </div>
-            <div class="money__box border-4 border-blue-400 ">
+            <div class="money__box h-auto p-3 flex flex-col justify-around border-4 border-blue-400 ">
+                <div class="money__subbox flex flex-row ">
+                    <div class="money__bill__container">
+                        <div class="money__bill__nav border-4 p-1 my-3 border-yellow-100 text-lg">
+                            Money in hand (원)
+                        </div>
+                        <div class="money__bill__box"></div>
+                    </div>
+                    <div class="money__count__container">
+                        <div class="money__count__nav border-4 p-1 my-3 border-yellow-100 text-lg">
+                            amount (개수)
+                        </div>
+                        <div class="money__count__box"></div>
+                    </div>
+                </div>
+                <div class="money__sum border-4 p-1 my-3 border-yellow-100 text-lg">합계</div>
             </div>
         </div>
     </div>
