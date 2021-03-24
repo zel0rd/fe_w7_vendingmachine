@@ -1,14 +1,19 @@
 import {$,$$} from "../util/util";
 
-const moneyBillBox = $(".money__bill__box");
 const moneyCountBox = $(".money__count__box");
-const moneyBillArr = [100, 500, 1000, 5000, 10000];
-// const moneyCountArr = $$(".money__cnt");
 
 
 class WalletView {
+    //WalletModel의 init data가져오기
     constructor() {
     }
+    //update
+    update() {
+        const tencount = $("#10");
+
+
+    }
+    //초기 money 개수 렌더링
     async render() {
         let moneyCountInitArr = [1, 2, 5, 10, 20];
         let inp = moneyCountInitArr.reduce((acc, cur) => {
@@ -18,9 +23,11 @@ class WalletView {
         moneyCountBox.innerHTML = inp;
     }
 
+    //moeny 개수 data 변경 시 렌더링 이벤트
     async setEvent() {
         await this.render();
-        const moneyCountArr = $$(".money__cnt");
+        // const moneyCountArr = $$(".money__cnt");
+        const moneyCountArr = document.querySelectorAll(".money__cnt");
 
         for (var i of moneyCountArr) {
             i.addEventListener("click", function () {
