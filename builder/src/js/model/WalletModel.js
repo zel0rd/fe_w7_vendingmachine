@@ -10,9 +10,15 @@ class WalletModel {
         //옵저버
         this.observers = [];
     }
-    decrement() {
-        this.wallet.myMoney[10000] -= 1
-        this.notifyObservers();
+    decrement(keys) {
+        if (this.wallet.myMoney[keys] >= 1) {
+            this.wallet.myMoney[keys] -= 1
+            this.notifyObservers();
+        } else {
+            console.log("동전의 잔액이 부족합니다");
+        }
+
+
     }
     addObserver(o) {
         this.observers.push(o);
