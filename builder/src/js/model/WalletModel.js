@@ -1,4 +1,4 @@
-import { $, $$ } from "../../util"; //이런식으로
+// import { $, $$ } from "../util/util";
 
 class WalletModel {
     constructor() {
@@ -7,7 +7,20 @@ class WalletModel {
             myMoney : { 100:1, 500:1,1000:3, 5000:5, 10000:7 },
             currentInsertMoney: 0
         }
-        l
+        //옵저버
+        this.observers = [];
+    }
+    decrement() {
+        this.wallet.myMoney[10000] -= 1
+        this.notifyObservers();
+    }
+    addObserver(o) {
+        this.observers.push(o);
+    }
+    notifyObservers() {
+        for (let o of this.observers) {
+            o.update(this);
+        }
     }
 
     getTotalMoney() {
@@ -19,6 +32,5 @@ class WalletModel {
         return totalMoney;
     }
 }
-myWallet = new WalletModel();
-console.log(myWallet.wallet)
-console.log("aa?",myWallet.getTotalMoney())
+
+export { WalletModel };

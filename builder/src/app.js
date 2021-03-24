@@ -2,14 +2,13 @@ import { renderProduct } from "./productBox";
 import { WalletView } from "./js/view/WalletView";
 import { WalletModel} from "./js/model/WalletModel";
 
-
-// import { renderMoneyBill,renderMoneyCount } from "./wallet";
 renderProduct();
+
 const myWallet = new WalletView;
-// await myWallet.render();
 myWallet.setEvent();
-// renderMoneyBill();
-// renderMoneyCount();
+const myWallet2 = new WalletModel;
+myWallet2.decrement();
+console.log(myWallet2);
 
 
-// import {WalletModel } from "./js/model/WalletModel.js"
+myWallet2.addObserver(myWallet2);
