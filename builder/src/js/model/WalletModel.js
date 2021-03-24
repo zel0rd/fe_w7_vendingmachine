@@ -18,8 +18,9 @@ class WalletModel {
         this.observers.push(o);
     }
     notifyObservers() {
+        let data = this.wallet.myMoney
         for (let o of this.observers) {
-            o.update(this);
+            o.update(data);
         }
     }
 
