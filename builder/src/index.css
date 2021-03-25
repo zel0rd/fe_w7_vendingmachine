@@ -3,6 +3,21 @@
 .wrapper {
     min-width: 80rem;
 }
+/* .wrapper+.mt-4 {
+    min-width: 100px;
+} */
+.screen__box{ 
+    height: 580px;
+}
+
+/* .vending__box {
+    height: 570px;
+} */
+
+.money__box{
+    height: 580px;
+}
+
 
 *{
     border-radius: 10px;

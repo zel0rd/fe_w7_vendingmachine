@@ -1,7 +1,7 @@
 import {$,$$} from "../util/util";
 import { MENU } from "../data/menu"
+import { MENUCOUNT } from "../data/menuCount"
 import { WalletView } from "./WalletView";
-const aa = MENU;
 
 class ProductView {
     constructor(WalletModel, ProductModel){
@@ -30,19 +30,20 @@ class ProductView {
         for (const [key, value] of Object.entries(menu)) {
             if(value <= insertMoney){
                 // 활성화 버튼 div class 추가
-                inp+=`<div id=${key} class="product w-1/4 h-1/4 m-2 py-8 min-w-100 border-4 border-dashed rounded-2xl border-yellow-200 bg-green-100 hover:bg-yellow-200 shadow-md">${key}<br>${value}</div>`;
+                inp+=`<div id=${key} class="product w-1/4 h-1/4 m-2 py-8 min-w-100 border-4 border-dashed rounded-2xl border-yellow-200 bg-green-100 hover:bg-yellow-200 shadow-md">${key}<br>${value} : ${MENUCOUNT[key]}</div>`;
             } else {
                 // 비활성화 버튼 div class 추가
-                inp+=`<div id=${key} class="product w-1/4 h-1/4 m-2 py-8 min-w-100 border-4 border-dashed rounded-2xl border-yellow-200 bg-yellow-100 hover:bg-yellow-200 shadow-md">${key}<br>${value}</div>`;
+                inp+=`<div id=${key} class="product w-1/4 h-1/4 m-2 py-8 min-w-100 border-4 border-dashed rounded-2xl border-yellow-200 bg-yellow-100 hover:bg-yellow-200 shadow-md">${key}<br>${value} : ${MENUCOUNT[key]}</div>`;
             }
             
         }
         vendingBox.innerHTML=inp;
     }
 
-    buy(walletModel, price){
-        return function(walletModel, price){
-            walletModel.buy(price)
+    buy(walletModel,productModel, price, product){
+        return function(walletModel,productModel, price, product){
+            walletModel.buy(price, product)
+            productModel.buy(product)
         }
     }
 
@@ -60,15 +61,16 @@ class ProductView {
         const buyCallBack = this.buy()
         const failCallBack = this.fail()
         const walletModel = this.WalletModel;
+        const productModel = this.WalletModel;
         for (let i = 0; i < products.length; i++){
             let productModel = this.ProductModel
             products[i].addEventListener("click", function () {
                 let price = Object.values(productModel.menu)[i]
-                return (price <= insertMoney) ? buyCallBack(walletModel, price) : failCallBack()
+                let product = Object.keys(productModel.menu)[i]
+                return (price <= insertMoney) ? buyCallBack(walletModel,productModel, price, product) : failCallBack()
             })
         }
     }
-
 }
 
 export { ProductView }
