@@ -10,16 +10,16 @@ class ProductView {
     }
 
     update(){
-        console.log(this)
-        // console.log("render")
-        // console.log(this.WalletModel)
-        // console.log(this.menu)
+        // console.log(this)
         this.render()
+    }
+
+    getInsertMoney(){
+        console.log(this.WalletModel)
     }
 
     render() {
         const vendingBox = $(".vending__box")
-        console.log(vendingBox)
         let menu = this.ProductModel.menu;
         let inp = "";
         for (const [key, value] of Object.entries(menu)) {

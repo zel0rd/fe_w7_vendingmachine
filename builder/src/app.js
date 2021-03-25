@@ -1,5 +1,6 @@
 import { WalletModel } from "./js/model/WalletModel";
 import { ProductModel } from "./js/model/ProductModel";
+
 import { WalletView } from "./js/view/WalletView";
 import { ScreenView } from "./js/view/ScreenView";
 import { ProductView } from "./js/view/ProductView"

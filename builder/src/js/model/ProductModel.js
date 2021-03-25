@@ -8,7 +8,6 @@ class ProductModel {
     
     addObserver(o) {
         this.observers.push(o);
-        console.log("MENU : ",this)
     }
 
     notifyObservers() {
