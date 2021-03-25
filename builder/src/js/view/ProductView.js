@@ -42,14 +42,13 @@ class ProductView {
 
     buy(walletModel, price){
         return function(walletModel, price){
-            console.log(walletModel)
             walletModel.buy(price)
         }
     }
 
     fail(){
         return function() {
-            console.log("실패!!!")
+            console.log("투입금액이 부족합니다.")
         }
     }
 
