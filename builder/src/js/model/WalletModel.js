@@ -15,14 +15,30 @@ class WalletModel {
         this.observers = [];
     }
     buy(price){
-        console.log(this.insert)
-        console.log(price)
-        
+        let inpMoney = this.getTotalMoney(this.insert.myInsert);
+        let chargeMoney = inpMoney - price;
+        this.insert.myInsert = this.TotalMoneyToCoin(chargeMoney);
+        this.notifyObservers();
+    }
+    //합계를 화폐단위로 만들기
+    TotalMoneyToCoin(sumMoney) {
+        const tempInsert = {};
+        for (let i = coinSET.length - 1; i >= 0; i--){
+            let moc = parseInt(sumMoney / coinSET[i]);
+            sumMoney = sumMoney % coinSET[i];
+            tempInsert[coinSET[i]]=moc
+        }
+        return tempInsert;
 
-        // 투입 금액 총계 계산 후       // { 100:0, 500:0,1000:1, 5000:0, 10000:0 },
-        // 총계 - price = 거스름 돈     // 1000 - 500 = 500(거스름 돈)
-        // 거스름 돈 to coins           // 거스름돈을 coin 타입으로 { 100:0, 500:1,1000:0, 5000:0, 10000:0 },
-        // this.insert = 거스름 돈      // 자판기에 들어잇는 돈인 insertMoney를 거스름돈으로 바꿔줌
+    }
+
+    getTotalMoney(inMyWallet) {
+        let totalMoney=0;
+        for (const [key, value] of Object.entries(inMyWallet))
+        {
+            totalMoney += key * value;
+        }
+        return totalMoney;
     }
 
     insertCoin(keys) {
@@ -46,14 +62,7 @@ class WalletModel {
         }
     }
 
-    getTotalMoney() {
-        let totalMoney=0;
-        for (const [key, value] of Object.entries(this.wallet.myMoney))
-        {
-            totalMoney += key * value;
-        }
-        return totalMoney;
-    }
+ 
 }
 
 export { WalletModel };
