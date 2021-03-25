@@ -12,14 +12,13 @@ const walletView = new WalletView(walletModel);
 const screenView = new ScreenView(walletModel);
 const productView = new ProductView(walletModel, productModel);
 
-walletView.update();
+walletView.init();
 screenView.init();
-productView.update();
+productView.init();
 
 walletModel.addObserver(walletView);
 walletModel.addObserver(screenView);
 walletModel.addObserver(productView);
-
 productModel.addObserver(productView);
 
 

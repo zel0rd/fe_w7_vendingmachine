@@ -75,10 +75,7 @@ class WalletModel {
         for (let o of this.observers) {
             o.update();
         }
-
     }
-
- 
 }
 
 export { WalletModel };

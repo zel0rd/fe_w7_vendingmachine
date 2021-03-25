@@ -8,8 +8,12 @@ class ProductView {
         this.ProductModel = ProductModel;
     }
 
-    update(){
+    init() {
+        this.render();
         this.setEvent();
+    }
+    update(){
+        this.init();
     }
 
     getInsertMoney() {
@@ -58,7 +62,6 @@ class ProductView {
 
 
     setEvent() {
-        this.render();
         const products = document.querySelectorAll(".product")
         const insertMoney = this.getInsertMoney();
         const buyCallBack = this.buy()

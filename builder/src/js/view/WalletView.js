@@ -7,9 +7,14 @@ class WalletView {
     constructor (WalletModel) {
         this.WalletModel = WalletModel;
     }
+
+    init() {
+        this.render()
+        this.setEvent();
+    }
     //update
     update() {
-        this.setEvent();
+        this.init()
     }
 
     getMyBudget() {
@@ -37,7 +42,6 @@ class WalletView {
 
     //money 개수 data 변경 시 렌더링 이벤트
     async setEvent() {
-        this.render();
         const moneyCountArr = document.querySelectorAll(".money__cnt");
         for (let i = 0; i < moneyCountArr.length; i++){
             let Walletdata = this.WalletModel;
