@@ -1,15 +1,23 @@
-import { renderProduct } from "./productBox";
-import { WalletModel} from "./js/model/WalletModel";
+import { WalletModel } from "./js/model/WalletModel";
+import { ProductModel } from "./js/model/ProductModel";
 import { WalletView } from "./js/view/WalletView";
 import { ScreenView } from "./js/view/ScreenView";
+import { ProductView } from "./js/view/ProductView"
 
-renderProduct();
+const walletModel = new WalletModel;
+const productModel = new ProductModel;
 
-const model = new WalletModel;
-const view = new WalletView(model);
-const screenView = new ScreenView(model);
+const walletView = new WalletView(walletModel);
+const screenView = new ScreenView(walletModel);
+const productView = new ProductView(walletModel, productModel);
 
-view.update();
+walletView.update();
 screenView.update();
-model.addObserver(view);
-model.addObserver(screenView);
+productView.update();
+
+walletModel.addObserver(walletView);
+walletModel.addObserver(screenView);
+walletModel.addObserver(productView);
+
+productModel.addObserver(productView);
+
