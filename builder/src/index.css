@@ -1,25 +1,52 @@
 @import './css/tailwind.css';
 
-.wrapper {
-    min-width: 80rem;
-}
-/* .wrapper+.mt-4 {
-    min-width: 100px;
-} */
-.screen__box{ 
-    height: 580px;
+@font-face {
+    font-family: 'LAB디지털';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/LAB디지털.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
-/* .vending__box {
-    height: 570px;
-} */
-
-.money__box{
-    height: 580px;
+@font-face {
+    font-family: 'NeoDunggeunmo';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.3/NeoDunggeunmo.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
-
 
 *{
     border-radius: 10px;
     text-align: center;
+    font-family: 'NeoDunggeunmo';
+    
+}
+
+.youngtami{
+    font-family: 'Jua', sans-serif;
+}
+
+.vending__title{
+    font-family: 'LAB디지털';
+}
+
+.screen__title{
+    font-family: 'LAB디지털';
+}
+
+
+.money__title{
+    font-family: 'LAB디지털';
+}
+
+
+.wrapper {
+    min-width: 80rem;
+}
+
+.screen__box{ 
+    height: 610px;
+}
+
+.money__box{
+    height: 610px;
 }

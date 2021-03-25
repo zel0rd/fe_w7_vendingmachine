@@ -1,7 +1,6 @@
 import {$,$$} from "../util/util";
 import { MENU } from "../data/menu"
 import { MENUCOUNT } from "../data/menuCount"
-import { WalletView } from "./WalletView";
 
 class ProductView {
     constructor(WalletModel, ProductModel){
@@ -28,12 +27,12 @@ class ProductView {
         let menu = this.ProductModel.menu;
         let inp = "";
         for (const [key, value] of Object.entries(menu)) {
-            if(value <= insertMoney){
+            if(value <= insertMoney && this.ProductModel.menuCount[key] >= 1){
                 // 활성화 버튼 div class 추가
-                inp+=`<div id=${key} class="product w-1/4 h-1/4 m-2 py-8 min-w-100 border-4 border-dashed rounded-2xl border-yellow-200 bg-green-100 hover:bg-yellow-200 shadow-md">${key}<br>${value} : ${MENUCOUNT[key]}</div>`;
+                inp+=`<div id=${key} class="product w-1/4 h-1/4 m-2 py-6 min-w-100 border-4 border-dashed rounded-2xl border-yellow-200 bg-green-100 hover:bg-yellow-200 shadow-md">${key}<br>${value}원<br>수량:${MENUCOUNT[key]}</div>`;
             } else {
                 // 비활성화 버튼 div class 추가
-                inp+=`<div id=${key} class="product w-1/4 h-1/4 m-2 py-8 min-w-100 border-4 border-dashed rounded-2xl border-yellow-200 bg-yellow-100 hover:bg-yellow-200 shadow-md">${key}<br>${value} : ${MENUCOUNT[key]}</div>`;
+                inp+=`<div id=${key} class="product w-1/4 h-1/4 m-2 py-6 min-w-100 border-4 border-dashed rounded-2xl border-yellow-200 bg-yellow-100 hover:bg-yellow-200 shadow-md">${key}<br>${value}원<br>수량:${MENUCOUNT[key]}</div>`;
             }
             
         }
@@ -42,8 +41,12 @@ class ProductView {
 
     buy(walletModel,productModel, price, product){
         return function(walletModel,productModel, price, product){
-            walletModel.buy(price, product)
-            productModel.buy(product)
+            if(productModel.menuCount[product] >= 1){
+                walletModel.buy(price, product)
+                productModel.buy(product)
+            } else {
+                console.log("재고가 부족합니다.")
+            }
         }
     }
 
