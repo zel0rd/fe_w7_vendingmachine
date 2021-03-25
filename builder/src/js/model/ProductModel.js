@@ -9,6 +9,8 @@ class ProductModel {
     }
 
     buy(product){
+        this.menuCount[product] -= 1;
+        this.notifyObservers()
     }
     
     addObserver(o) {
@@ -16,9 +18,8 @@ class ProductModel {
     }
 
     notifyObservers() {
-        let data = this.wallet.myMoney
         for (let o of this.observers) {
-            o.update(data);
+            o.update();
         }
     }
 

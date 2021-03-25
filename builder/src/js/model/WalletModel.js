@@ -39,7 +39,6 @@ class WalletModel {
         if (this.wallet.myMoney[keys] >= 1) {
             this.wallet.myMoney[keys] -= 1;
             this.insert.myInsert[keys] += 1;
-            // messageBox.innerText += text
             messageBox.innerHTML +=`<div class="bg-gradient-to-r from-red-100 to-red-400">${keys}원이 투입되었습니다</div>`
             this.notifyObservers();
         } else {
@@ -54,7 +53,7 @@ class WalletModel {
             myMoney[key] += myInsert[key]
         }
         this.insert.myInsert = { 100: 0, 500: 0, 1000: 0, 5000: 0, 10000: 0 };
-        messageBox.innerHTML +=`<div class="bg-gradient-to-r from-yellow-100 to-yellow-400">투입금액 반환되었습니다</div>`
+        messageBox.innerHTML +=`<div class="bg-gradient-to-r from-green-100 to-green-400">투입금액 반환되었습니다</div>`
         this.notifyObservers();
     }
     
@@ -73,9 +72,8 @@ class WalletModel {
     }
 
     notifyObservers() {
-        let data = this.wallet.myMoney
         for (let o of this.observers) {
-            o.update(data);
+            o.update();
         }
 
     }

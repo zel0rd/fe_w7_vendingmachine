@@ -553,6 +553,9 @@ video {
   height: auto;
 }
 
+.font-sans-kr { font-family: "Noto Sans KR", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
 .container {
   width: 100%;
 }
@@ -183911,3 +183914,4 @@ video {
             animation: bounce 1s infinite;
   }
 }
+
