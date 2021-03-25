@@ -50,6 +50,20 @@ class WalletModel {
             console.log("동전의 잔액이 부족합니다");
         }
     }
+    //반환
+    getReturn() {
+        let myMoney = this.wallet.myMoney;
+        let myInsert = this.insert.myInsert;
+
+        for (const [key, value] of Object.entries(myMoney))
+            {
+                myMoney[key] += myInsert[key]
+        }
+
+        this.insert.myInsert = { 100: 0, 500: 0, 1000: 0, 5000: 0, 10000: 0 };
+        this.notifyObservers();
+
+    }
 
     addObserver(o) {
         this.observers.push(o);
