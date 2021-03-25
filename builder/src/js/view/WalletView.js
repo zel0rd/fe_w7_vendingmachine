@@ -1,5 +1,6 @@
 import {$,$$} from "../util/util";
 const moneyCountBox = $(".money__count__box");
+const moneySumVal = $(".money__sum__val")
 
 class WalletView {
     //WalletModel의 init data가져오기
@@ -10,6 +11,16 @@ class WalletView {
     update() {
         this.setEvent();
     }
+
+    getMyBudget() {
+        let myMoney = this.WalletModel.wallet.myMoney;
+        let myBudget = 0;
+        for (const [key, value] of Object.entries(myMoney)) {
+            myBudget += key * value
+        }
+        return myBudget;
+    }
+
     //초기 money 개수 렌더링
     async render() {
         let coins = Object.values(this.WalletModel.wallet.myMoney);
@@ -18,6 +29,10 @@ class WalletView {
             return acc;
         },"")
         moneyCountBox.innerHTML = inp;
+
+        // mybudget 렌더링
+        let myBudget = this.getMyBudget();
+        moneySumVal.innerHTML = `${myBudget}원`
     }
 
     //money 개수 data 변경 시 렌더링 이벤트
@@ -27,7 +42,7 @@ class WalletView {
         for (let i = 0; i < moneyCountArr.length; i++){
             let Walletdata = this.WalletModel;
             moneyCountArr[i].addEventListener("click", function () {
-                Walletdata.decrement(Object.keys(Walletdata.wallet.myMoney)[i]);
+                Walletdata.insertCoin(Object.keys(Walletdata.wallet.myMoney)[i]);
 
             })
         }
