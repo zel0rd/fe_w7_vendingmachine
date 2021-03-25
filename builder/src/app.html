@@ -36,7 +36,7 @@
             </div>
             <div class="screen__box h-auto p-3 border-4 border-blue-400  flex flex-col flex-wrap">
                 <div class="screen__inpMoney border-4 my-3 border-yellow-100">
-                    <input class="ending__money-inp text-2xl" type="text" placeholder="coin"/>
+                    <div class="ending__money-inp text-2xl" type="text"/>0원</div>
                 </div>
                 <div class="screen__button border-4 my-3 border-yellow-100 text-lg">
                     <button class="container mx-auto screen__btn bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 rounded-md" type="button">🪙 changes (반환)</button>
@@ -57,7 +57,7 @@
             </div>
             <div class="money__box h-auto p-3 flex flex-col justify-around border-4 border-blue-400 ">
                 <div class="money__subbox flex flex-row ">
-                    <div class="money__bill__container">
+                    <div class="money__bill__container w-1/2 px-4	">
                         <div class="money__bill__nav border-4 p-1 my-3 border-yellow-100 text-lg">
                             Money in hand (원)
                         </div>
@@ -69,14 +69,19 @@
                             <div class="money__bill h-1/6 py-4 my-3 min-w-150 border-4 border-dashed rounded-2xl border-yellow-200 border-yellow-200 bg-yellow-100 hover:bg-yellow-200 shadow-md">10000</div>
                         </div>
                     </div>
-                    <div class="money__count__container">
+                    <div class="money__count__container w-1/2 px-4	">
                         <div class="money__count__nav border-4 p-1 my-3 border-yellow-100 text-lg">
                             amount (개수)
                         </div>
                         <div class="money__count__box"></div>
                     </div>
                 </div>
-                <div class="money__sum border-4 p-1 my-3 border-yellow-100 text-lg">합계</div>
+                <div class="money__sumbox flex flex-row px-4 space-x-8">
+                    <div class="money__sum__nav border-4 py-3 w-1/2	border-yellow-100 text-lg">합계</div>
+                        
+                    <!-- <div class="money__sum__nav border-4 p-1 my-3 min-w-150 border-yellow-100 text-lg">합계</div> -->
+                    <div class="money__sum__val border-4 py-3 w-1/2	border-yellow-100 text-lg">20000원</div>
+                </div>
             </div>
         </div>
     </div>
