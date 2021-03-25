@@ -1,9 +1,5 @@
-@import 'tailwind.css';
+@import './css/tailwind.css';
 
-/* @font-face {
-    font-family: dungenmo;
-    src: url("./neodgm.ttf");
-} */
 .wrapper {
     min-width: 80rem;
 }
@@ -12,7 +8,3 @@
     border-radius: 10px;
     text-align: center;
 }
-
-/* body{
-	font-family:dungenmo;
-} */
