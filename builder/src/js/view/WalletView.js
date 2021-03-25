@@ -43,7 +43,6 @@ class WalletView {
             let Walletdata = this.WalletModel;
             moneyCountArr[i].addEventListener("click", function () {
                 Walletdata.insertCoin(Object.keys(Walletdata.wallet.myMoney)[i]);
-
             })
         }
     } 

@@ -7,7 +7,7 @@ class ScreenView {
     }
     init() {
         this.setEvent();
-        this.update();
+        this.render();
     }
 
     update() {
