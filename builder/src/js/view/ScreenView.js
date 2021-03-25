@@ -1,9 +1,13 @@
 import {$,$$} from "../util/util";
 const insertMoney = $(".ending__money-inp")
-
+const returnBtn = $(".screen__btn");
 class ScreenView {
     constructor (WalletModel) {
         this.WalletModel = WalletModel;
+    }
+    init() {
+        this.setEvent();
+        this.update();
     }
 
     update() {
@@ -23,7 +27,25 @@ class ScreenView {
         let insertTotal = this.getInsertTotal();
         insertMoney.innerHTML = `${insertTotal}원`
     }
+    //반환
+    getReturn(walletModel) {
+        return function (walletModel) {
+            walletModel.getReturn();
+        }
+        
+    }
+    //반환
+    setEvent() {
+        const returnCallBack = this.getReturn();
+        const walletModel = this.WalletModel;
 
+        returnBtn.addEventListener('click', () => {
+            return returnCallBack(walletModel);
+        })
+
+    }
+    
+  
 }
 
 export {ScreenView}
