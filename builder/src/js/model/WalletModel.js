@@ -1,5 +1,6 @@
-// import { $, $$ } from "../util/util";
+import { $, $$ } from "../util/util";
 const coinSET = [100,500,1000,5000,10000]
+const messageBox = $(".screen__message")
 
 class WalletModel {
     constructor() {
@@ -14,12 +15,6 @@ class WalletModel {
         //옵저버
         this.observers = [];
     }
-    buy(price){
-        let inpMoney = this.getTotalMoney(this.insert.myInsert);
-        let chargeMoney = inpMoney - price;
-        this.insert.myInsert = this.TotalMoneyToCoin(chargeMoney);
-        this.notifyObservers();
-    }
     //합계를 화폐단위로 만들기
     TotalMoneyToCoin(sumMoney) {
         const tempInsert = {};
@@ -29,7 +24,6 @@ class WalletModel {
             tempInsert[coinSET[i]]=moc
         }
         return tempInsert;
-
     }
 
     getTotalMoney(inMyWallet) {
@@ -45,6 +39,8 @@ class WalletModel {
         if (this.wallet.myMoney[keys] >= 1) {
             this.wallet.myMoney[keys] -= 1;
             this.insert.myInsert[keys] += 1;
+            // messageBox.innerText += text
+            messageBox.innerHTML +=`<div class="bg-gradient-to-r from-red-100 to-red-400">${keys}원이 투입되었습니다</div>`
             this.notifyObservers();
         } else {
             console.log("동전의 잔액이 부족합니다");
@@ -54,15 +50,22 @@ class WalletModel {
     getReturn() {
         let myMoney = this.wallet.myMoney;
         let myInsert = this.insert.myInsert;
-
-        for (const [key, value] of Object.entries(myMoney))
-            {
-                myMoney[key] += myInsert[key]
+        for (const [key, value] of Object.entries(myMoney)){
+            myMoney[key] += myInsert[key]
         }
-
         this.insert.myInsert = { 100: 0, 500: 0, 1000: 0, 5000: 0, 10000: 0 };
+        messageBox.innerHTML +=`<div class="bg-gradient-to-r from-yellow-100 to-yellow-400">투입금액 반환되었습니다</div>`
         this.notifyObservers();
-
+    }
+    
+    buy(price, product){
+        let inpMoney = this.getTotalMoney(this.insert.myInsert);
+        let chargeMoney = inpMoney - price;
+        this.insert.myInsert = this.TotalMoneyToCoin(chargeMoney);
+        setTimeout(function(){
+            messageBox.innerHTML +=`<div class="bg-gradient-to-r from-blue-100 to-blue-400">${product} 나왔습니다.</div>`
+        }, 2000)
+        this.notifyObservers();
     }
 
     addObserver(o) {
@@ -74,6 +77,7 @@ class WalletModel {
         for (let o of this.observers) {
             o.update(data);
         }
+
     }
 
  

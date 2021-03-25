@@ -19,6 +19,7 @@ productView.update();
 walletModel.addObserver(walletView);
 walletModel.addObserver(screenView);
 walletModel.addObserver(productView);
+
 productModel.addObserver(productView);
 
 
