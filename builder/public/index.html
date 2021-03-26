@@ -10,12 +10,12 @@
 <script defer src="bundle.js"></script></head>
 
 <body>
-    <div class="border-dashed container wrapper border-4 mt-4 mx-auto border-yellow-400 text-center text-4xl shadow-md font-mono">
+    <div class="title container wrapper border-4 mt-4 mx-auto border-yellow-400 text-center text-5xl shadow-md font-mono">
         <span style="color: #fbbf24;">☻ </span>
-        <span style="color: #ef4444">T</span><span style="color: #f59e0b">A</span><span style="color: #fbbf24">M</span><span style="color: #10b981">I</span>
+        <span style="color: #ef4444">T </span><span style="color: #f59e0b">A </span><span style="color: #fbbf24">M </span><span style="color: #10b981">I</span>
         <span style="color: #2563eb"> &</span>
-        <span style="color: #ef4444"> Y</span><span style="color: #f59e0b">O</span><span style="color: #fbbf24">U</span><span style="color: #10b981">N</span><span style="color: #2563eb">G</span>
-        <span style="color: #8d6ded">CAFE</span>
+        <span style="color: #ef4444"> Y </span><span style="color: #f59e0b">O </span><span style="color: #fbbf24">U </span><span style="color: #10b981">N </span><span style="color: #2563eb">G </span>
+        <span class="text-3xl" style="color: #828282">BBANG.zip</span>
         <span style="color: #fbbf24"> ☻</span>
     </div>
 
@@ -23,67 +23,64 @@
 
         <div class="vending w-1/3 mx-4">
             <div class="vending__nav my-6 text-2xl">
-                <div class="vending__title p-3 border-4 border-red-500 bg-red-200 text-gray-700 shadow-md">
-                    🥨 dessert
+                <div class="vending__title p-3 border-4 border-red-500 bg-red-200 font-extrabold shadow-md">
+                    🥨 d e s s e r t
                 </div>
             </div>
-            <div class="vending__box h-auto pt-4 p-3 border-4 border-blue-400 flex justify-between flex-wrap">
+            <div class="vending__box h-auto pt-4 p-3 border-4 border-yellow-400 shadow-md flex justify-between flex-wrap">
             </div>
         </div>
     
         <div class="screen w-1/3 mx-4">
             <div class="screen__nav my-6 text-2xl">
-                <div class="screen__title p-3 border-4 border-red-500 bg-red-200 text-gray-700 shadow-md">
-                    🕹 screen
+                <div class="screen__title p-3 border-4 border-red-500 bg-red-200 font-extrabold shadow-md">
+                    🕹 s c r e e n
                 </div>
             </div>
-            <div class="screen__box h-auto p-3 border-4 border-blue-400 flex flex-col">
-                <div class="screen__inpMoney border-4 my-3 bg-red-200 border-red-400">
+            <div class="screen__box h-auto p-3 border-4 border-yellow-400 shadow-md flex flex-col">
+                <div class="screen__inpMoney my-3 rounded-lg bg-gradient-to-r from-pink-300 to-yellow-300">
                     <div class="ending__money-inp text-2xl" type="text"/>0원</div>
                 </div>
-                <div class="screen__button border-4 my-3 border-yellow-100 text-lg">
-                    <button class="container mx-auto screen__btn bg-gradient-to-r from-green-200 to-blue-300 hover:from-pink-300 hover:to-yellow-300 text-2xl rounded-md" type="button">🪙 changes (반환)</button>
-                    
+                <div class="screen__button my-3 text-2xl">
+                    <button class="container mx-auto my-3 screen__btn bg-gradient-to-r from-green-200 to-blue-300 hover:from-pink-300 hover:to-yellow-300 text-2xl rounded-lg" type="button">🪙 changes (반환)</button>
                 </div>
-                <div class="screen__message__box overflow-y-scroll h-auto border-4 my-3 border-yellow-100 text-lg">
-                    <div class="screen__box__title  bg-yellow-100 rounded-md">✎ message</div>
-                    <div class="screen__message flex flex-col-reverse"></div>
+                <div class="screen__message__box overflow-scroll h-auto border-4 my-3 border-yellow-200 ">
+                    <div class="screen__box__title border-yellow-200 bg-yellow-200 rounded-sm text-2xl">✎ message</div>
+                    <div class="screen__message flex flex-col-reverse text-xl"></div>
                 </div>
             </div>
         </div>
     
         <div class="money w-1/3 mx-4">
             <div class="money__nav my-6 text-2xl">
-                <div class="money__title p-3 border-4 border-red-500 bg-red-200 text-gray-700 shadow-md">
-                    💵 wallet
+                <div class="money__title p-3 border-4 border-red-500 bg-red-200 font-extrabold shadow-md">
+                    💵 w a l l e t
                 </div>
             </div>
-            <div class="money__box h-auto p-3 flex flex-col justify-around border-4 border-blue-400 ">
+            <div class="money__box h-auto p-3 flex flex-col justify-around border-4 border-yellow-400 shadow-md ">
                 <div class="money__subbox flex flex-row ">
                     <div class="money__bill__container w-1/2 px-4	">
-                        <div class="money__bill__nav border-4 p-1 my-3 border-yellow-100 text-lg">
-                            Money <br> (원)
+                        <div class="money__bill__nav p-1 my-3 text-xl shadow-md">
+                            M o n e y <br> ( 원 )
                         </div>
                         <div class="money__bill__box">
-                            <div class="money__bill h-1/6 py-4 my-3 min-w-150 border-4 border-dashed rounded-2xl border-yellow-200 border-yellow-200 bg-yellow-100 shadow-md">100</div>
-                            <div class="money__bill h-1/6 py-4 my-3 min-w-150 border-4 border-dashed rounded-2xl border-yellow-200 border-yellow-200 bg-yellow-100 shadow-md">500</div>
-                            <div class="money__bill h-1/6 py-4 my-3 min-w-150 border-4 border-dashed rounded-2xl border-yellow-200 border-yellow-200 bg-yellow-100 shadow-md">1000</div>
-                            <div class="money__bill h-1/6 py-4 my-3 min-w-150 border-4 border-dashed rounded-2xl border-yellow-200 border-yellow-200 bg-yellow-100 shadow-md">5000</div>
-                            <div class="money__bill h-1/6 py-4 my-3 min-w-150 border-4 border-dashed rounded-2xl border-yellow-200 border-yellow-200 bg-yellow-100 shadow-md">10000</div>
+                            <div class="money__bill h-1/6 py-4 my-3 min-w-150 border-4 border-dashed rounded-2xl border-yellow-200 border-yellow-200 bg-yellow-100 text-xl shadow-md">100</div>
+                            <div class="money__bill h-1/6 py-4 my-3 min-w-150 border-4 border-dashed rounded-2xl border-yellow-200 border-yellow-200 bg-yellow-100 text-xl shadow-md">500</div>
+                            <div class="money__bill h-1/6 py-4 my-3 min-w-150 border-4 border-dashed rounded-2xl border-yellow-200 border-yellow-200 bg-yellow-100 text-xl shadow-md">1000</div>
+                            <div class="money__bill h-1/6 py-4 my-3 min-w-150 border-4 border-dashed rounded-2xl border-yellow-200 border-yellow-200 bg-yellow-100 text-xl shadow-md">5000</div>
+                            <div class="money__bill h-1/6 py-4 my-3 min-w-150 border-4 border-dashed rounded-2xl border-yellow-200 border-yellow-200 bg-yellow-100 text-xl shadow-md">10000</div>
                         </div>
                     </div>
                     <div class="money__count__container w-1/2 px-4	">
-                        <div class="money__count__nav border-4 p-1 my-3 border-yellow-100 text-lg">
-                            Amount <br> (개수)
+                        <div class="money__count__nav p-1 my-3 text-xl shadow-md">
+                            A m o u n t <br> (개수)
                         </div>
                         <div class="money__count__box"></div>
                     </div>
                 </div>
                 <div class="money__sumbox flex flex-row px-4 space-x-8">
-                    <div class="money__sum__nav border-4 py-3 w-1/2	border-yellow-100 text-lg">합계</div>
-                        
-                    <!-- <div class="money__sum__nav border-4 p-1 my-3 min-w-150 border-yellow-100 text-lg">합계</div> -->
-                    <div class="money__sum__val border-4 py-3 w-1/2	border-yellow-100 text-lg">20000원</div>
+                    <div class="money__sum__nav bg-blue-300 border-4 py-3 w-1/2 border-blue-500 text-xl">합계</div>
+                    <div class="money__sum__val border-4 py-3 w-1/2 border-blue-500 text-xl">20000원</div>
                 </div>
             </div>
         </div>
