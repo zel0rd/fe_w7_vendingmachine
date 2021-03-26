@@ -43,38 +43,31 @@ class ProductView {
         vendingBox.innerHTML=inp;
     }
 
-    buy(walletModel,productModel, price, product){
-        return function(walletModel,productModel, price, product){
-            if(productModel.menuCount[product] >= 1){
-                walletModel.buy(price, product)
-                productModel.buy(product)
-            } else {
-                console.log("재고가 부족합니다.")
-            }
+    buy(product, price){
+        if(this.ProductModel.menuCount[product] >= 1){
+            this.WalletModel.buy(price, product)
+            this.ProductModel.buy(product)
+        } else {
+            console.log("재고가 부족합니다.")
         }
     }
 
     fail(){
-        return function() {
-            console.log("투입금액이 부족합니다.")
-        }
+        console.log("투입금액이 부족합니다.")
     }
-
 
     setEvent() {
         const products = document.querySelectorAll(".product")
         const insertMoney = this.getInsertMoney();
-        const buyCallBack = this.buy()
-        const failCallBack = this.fail()
-        const walletModel = this.WalletModel;
-        const productModel = this.WalletModel;
+        let productModel = this.ProductModel
         for (let i = 0; i < products.length; i++){
-            let productModel = this.ProductModel
-            products[i].addEventListener("click", function () {
-                let price = Object.values(productModel.menu)[i]
-                let product = Object.keys(productModel.menu)[i]
-                return (price <= insertMoney) ? buyCallBack(walletModel,productModel, price, product) : failCallBack()
-            })
+            let price = Object.values(productModel.menu)[i]
+            let product = Object.keys(productModel.menu)[i]
+            if(price <= insertMoney){
+                products[i].addEventListener("click",this.buy.bind(this, product, price))
+            } else {
+                products[i].addEventListener("click",this.fail)
+            }
         }
     }
 }

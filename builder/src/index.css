@@ -50,9 +50,17 @@
 }
 
 .screen__box{ 
-    height: 610px;
+    height:660px;
 }
 
 .money__box{
-    height: 610px;
+    height: 660px;
+}
+
+.screen__message__box {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+.screen__message__box::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
 }

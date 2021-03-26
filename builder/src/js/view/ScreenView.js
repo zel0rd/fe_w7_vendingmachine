@@ -31,9 +31,7 @@ class ScreenView {
     getReturn(walletModel) {
         return function (walletModel) {
             let count = 0;
-            // walletModel.insert.Object.values(walletModel.insert);
             for (const [key, value] of Object.entries(walletModel.insert.myInsert)) {
-                console.log(value);
                 count += value
             }
             if (count > 0) {
