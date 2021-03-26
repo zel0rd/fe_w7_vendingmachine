@@ -21,6 +21,12 @@
     
 }
 
+.money__count__nav {
+    background-color: rgb(255, 208, 120);
+}
+.money__bill__nav {
+    background-color: rgb(255, 208, 120);
+}
 .youngtami{
     font-family: 'Jua', sans-serif;
 }
