@@ -39,7 +39,7 @@ class WalletModel {
         if (this.wallet.myMoney[keys] >= 1) {
             this.wallet.myMoney[keys] -= 1;
             this.insert.myInsert[keys] += 1;
-            messageBox.innerHTML +=`<div class="bg-gradient-to-r from-red-100 to-red-400">${keys}원이 투입되었습니다</div>`
+            messageBox.innerHTML +=`<div class="bg-yellow-100 rounded-sm">💵 ${keys}원이 투입되었습니다</div>`
             this.notifyObservers();
         } else {
             console.log("동전의 잔액이 부족합니다");
@@ -53,7 +53,7 @@ class WalletModel {
             myMoney[key] += myInsert[key]
         }
         this.insert.myInsert = { 100: 0, 500: 0, 1000: 0, 5000: 0, 10000: 0 };
-        messageBox.innerHTML +=`<div class="bg-gradient-to-r from-green-100 to-green-400">투입금액 반환되었습니다</div>`
+        messageBox.innerHTML +=`<div class="bg-gradient-to-r from-green-200 to-blue-300 rounded-sm">투입금액 반환되었습니다</div>`
         this.notifyObservers();
     }
     
@@ -62,7 +62,7 @@ class WalletModel {
         let chargeMoney = inpMoney - price;
         this.insert.myInsert = this.TotalMoneyToCoin(chargeMoney);
         setTimeout(function(){
-            messageBox.innerHTML +=`<div class="bg-gradient-to-r from-blue-100 to-blue-400">${product} 나왔습니다.</div>`
+            messageBox.innerHTML +=`<div class="bg-gradient-to-r from-pink-300 to-yellow-300 rounded-sm">${product} 나왔습니다.</div>`
         }, 2000)
         this.notifyObservers();
     }

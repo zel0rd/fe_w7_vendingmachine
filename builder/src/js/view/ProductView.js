@@ -33,7 +33,7 @@ class ProductView {
         for (const [key, value] of Object.entries(menu)) {
             if(value <= insertMoney && this.ProductModel.menuCount[key] >= 1){
                 // 활성화 버튼 div class 추가
-                inp+=`<div id=${key} class="product w-1/4 h-1/4 m-2 py-6 min-w-100 border-4 border-dashed rounded-2xl text-lg border-red-400 bg-yellow-100 hover:bg-red-500 hover:text-white shadow-md">${key}<br>${value}원<br>(${MENUCOUNT[key]})</div>`;
+                inp+=`<div id=${key} class="product w-1/4 h-1/4 m-2 py-6 min-w-100 border-4 border-dashed rounded-2xl text-lg border-red-500 bg-yellow-100 hover:bg-red-500 hover:text-white shadow-md">${key}<br>${value}원<br>(${MENUCOUNT[key]})</div>`;
             } else {
                 // 비활성화 버튼 div class 추가
                 inp+=`<div id=${key} class="product w-1/4 h-1/4 m-2 py-6 min-w-100 border-4 border-dashed rounded-2xl text-lg border-yellow-300 bg-yellow-100 shadow-md">${key}<br>${value}원<br>(${MENUCOUNT[key]})</div>`;

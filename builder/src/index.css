@@ -23,23 +23,26 @@
 
 .money__count__nav {
     background-color: rgb(255, 208, 120);
+    font-family: 'LAB디지털';
+    font-weight: 700;
 }
 .money__bill__nav {
     background-color: rgb(255, 208, 120);
+    font-family: 'LAB디지털';
+    font-weight: 700;
 }
-.youngtami{
-    font-family: 'Jua', sans-serif;
+.title span {
+    font-family: 'LAB디지털';
+    font-weight: 600;
+
 }
 
 .vending__title{
     font-family: 'LAB디지털';
 }
-
 .screen__title{
     font-family: 'LAB디지털';
 }
-
-
 .money__title{
     font-family: 'LAB디지털';
 }
