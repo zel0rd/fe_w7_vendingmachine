@@ -43,12 +43,13 @@ class WalletView {
     //money 개수 data 변경 시 렌더링 이벤트
     setEvent() {
         const moneyCountArr = document.querySelectorAll(".money__cnt");
-        for (let i = 0; i < moneyCountArr.length; i++){
+        moneyCountArr.forEach((ele, index) => {
             let Walletdata = this.WalletModel;
-            moneyCountArr[i].addEventListener("click", function () {
-                Walletdata.insertCoin(Object.keys(Walletdata.wallet.myMoney)[i]);
+            ele.addEventListener("click", function () {
+                Walletdata.insertCoin(Object.keys(Walletdata.wallet.myMoney)[index]);
             })
-        }
+        })
+        
     } 
 }
 

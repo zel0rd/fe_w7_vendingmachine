@@ -60,15 +60,16 @@ class ProductView {
         const products = document.querySelectorAll(".product")
         const insertMoney = this.getInsertMoney();
         let productModel = this.ProductModel
-        for (let i = 0; i < products.length; i++){
-            let price = Object.values(productModel.menu)[i]
-            let product = Object.keys(productModel.menu)[i]
+        
+        products.forEach((ele, index) => {
+            let price = Object.values(productModel.menu)[index]
+            let product = Object.keys(productModel.menu)[index]
             if(price <= insertMoney){
-                products[i].addEventListener("click",this.buy.bind(this, product, price))
+                ele.addEventListener("click",this.buy.bind(this, product, price))
             } else {
-                products[i].addEventListener("click",this.fail)
+                ele.addEventListener("click",this.fail)
             }
-        }
+        })
     }
 }
 
