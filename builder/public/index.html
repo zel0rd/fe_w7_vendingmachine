@@ -10,14 +10,29 @@
 <script defer src="bundle.js"></script></head>
 
 <body>
-    <div class="title container wrapper border-4 mt-4 mx-auto border-yellow-400 text-center text-5xl shadow-md font-mono">
-        <span style="color: #fbbf24;">☻ </span>
-        <span style="color: #ef4444">T </span><span style="color: #f59e0b">A </span><span style="color: #fbbf24">M </span><span style="color: #10b981">I</span>
-        <span style="color: #2563eb"> &</span>
-        <span style="color: #ef4444"> Y </span><span style="color: #f59e0b">O </span><span style="color: #fbbf24">U </span><span style="color: #10b981">N </span><span style="color: #2563eb">G </span>
-        <span class="text-3xl" style="color: #828282">BBANG.zip</span>
-        <span style="color: #fbbf24"> ☻</span>
+    <div class="title container wrapper flex flex-col border-4 mt-4 mx-auto border-yellow-400 text-center text-5xl shadow-md font-mono">
+        <div>
+            <span style="color: #fbbf24;">☻ </span>
+            <span style="color: #ef4444">T </span><span style="color: #f59e0b">A </span><span style="color: #fbbf24">M </span><span style="color: #10b981">I</span>
+            <span style="color: #2563eb"> &</span>
+            <span style="color: #ef4444"> Y </span><span style="color: #f59e0b">O </span><span style="color: #fbbf24">U </span><span style="color: #10b981">N </span><span style="color: #2563eb">G </span>
+            <span class="text-3xl" style="color: #828282">BBANG.zip</span>
+            <span style="color: #fbbf24"> ☻</span>
+        </div>
+
+        <button id="open" class="box-content border-4 border-yellow-400 bg-yellow-300 rounded-sm">💡 사용 안내 click ❗️</button>
+        <div id="modal" class="modal hidden">
+            <div class="modal__overlay"></div>
+            <div class="modal__content text-md">
+                <h1 class="text-md">💡 TAMI & YOUNG BBANG.ZIP 설명서</h1>
+                <br><br>TAMI & YOUNG BBANG.ZIP에 오신 것을 환영합니다.<br>
+                <br>금액을 투입 후 상품을 고르면, 즉시 결제되고 상품은 2초 뒤에 나옵니다.<br>
+                <br>
+                <button>❌</button>
+            </div>
+        </div>
     </div>
+   
 
     <div class="container wrapper mt-4 mx-auto flex justify-around text-center font-mono">
 
@@ -84,17 +99,7 @@
                 </div>
             </div>
         </div>
-        <button id="open" class="box-content">설명서</button>
-        <div id="modal" class="modal hidden">
-            <div class="modal__overlay"></div>
-            <div class="modal__content">
-                <h1>Vending Machine 설명서</h1>
-                TAMI & YOUNG BBANG.ZIP에 오신 것을 환영합니다.<br>
-                금액을 투입 후 상품을 고르면, 결제가 즉시 되고 상품은 2초 뒤에 나옵니다.<br>
-                <br>
-                <button>❌</button>
-            </div>
-        </div>
+        
     </div>
 </body>
 

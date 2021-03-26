@@ -6,7 +6,7 @@ class WalletModel {
     constructor() {
         //데이터정의
         this.wallet = {
-            myMoney : { 100:1, 500:1,1000:3, 5000:5, 10000:7 },
+            myMoney : { 100:5, 500:5,1000:5, 5000:5, 10000:5 },
             currentInsertMoney: 0
         }
         this.insert = {
