@@ -58,3 +58,38 @@ Commit Message Rule
 - [ADD] 새로운 파일 추가
 - [DELETE] 기존 파일 삭제
 - [REFACTOR] 코드의 전면 수정
+
+
+
+
+---
+
+
+![화면 기록 2021-03-26 오전 12 16 10 mov](https://user-images.githubusercontent.com/71919983/112497231-c4395780-8dc8-11eb-90b2-4ffdd26c5848.gif)
+
+📌 0325(목) 진행상황 
+### 기본동작
+- [x] **금액 투입** : `Wallet`(개수선택) -> `Screen` (동전 금액 표시) ,`Wallet`(동전갯수 ,총액변경)    
+- [x] **상품 구매** : `Product` (구매가능 상품 표시) -> 2초 뒤 `Screen` (상품 선택 표시)
+상품선택 -> 2초 뒤 `진행화면`('바나나 우유'가 선택됨)
+- [x]  **재고관리** : `Product`(재고 없는 상품 제외 한 구매 가능 상품 표시)
+
+Model|View|
+|:---:|:---:|
+|WalletModel|WalletView|
+|ProductModel|ProductView|
+|-|ScreenView|
+
+📌 추가 구현 예정 --------------------------------------------------------
+
+- [  ] 리팩토링 ( util 함수 사용 &  고차함수로 변환)
+
+동작 구현 [feature리스트](https://github.com/ink-0/fe_w7_vendingmachine)
+
+📌 느낀 점  과 질문-------------------------------------------------------------------
+ 
+처음 Product 의 data값을 menu.js 에서
+**MENU = { "상품이름" : "가격" }**  
+위와같이 key 와 value 값으로 제공하여 구현했다 재고의 존재를 발견하고 
+menuCount.js를 만들어 
+**MENUCOUNT= {"상품이름": "재고"}** 추가하여 해결했습니다.
