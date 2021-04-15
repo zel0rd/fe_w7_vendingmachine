@@ -30,7 +30,7 @@ class WalletView {
     render() {
         let coins = Object.values(this.WalletModel.wallet.myMoney);
         let inp = coins.reduce((acc, cur) => {
-            acc += `<div id=${cur} class="money__cnt h-1/6 py-4 my-3 min-w-150 border-4 border-dashed rounded-2xl border-yellow-300 bg-yellow-100 hover:bg-yellow-200 shadow-md">${cur}</div>`;
+            acc += `<div id=${cur} class="money__cnt h-1/6 py-4 my-3 min-w-150 border-4 border-dashed rounded-2xl border-yellow-300 text-xl bg-yellow-100 hover:bg-yellow-200 shadow-md">${cur}</div>`;
             return acc;
         },"")
         moneyCountBox.innerHTML = inp;
@@ -43,12 +43,13 @@ class WalletView {
     //money 개수 data 변경 시 렌더링 이벤트
     setEvent() {
         const moneyCountArr = document.querySelectorAll(".money__cnt");
-        for (let i = 0; i < moneyCountArr.length; i++){
+        moneyCountArr.forEach((ele, index) => {
             let Walletdata = this.WalletModel;
-            moneyCountArr[i].addEventListener("click", function () {
-                Walletdata.insertCoin(Object.keys(Walletdata.wallet.myMoney)[i]);
+            ele.addEventListener("click", function () {
+                Walletdata.insertCoin(Object.keys(Walletdata.wallet.myMoney)[index]);
             })
-        }
+        })
+        
     } 
 }
 
