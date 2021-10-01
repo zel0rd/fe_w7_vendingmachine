@@ -4,7 +4,6 @@
   "private": true,
   "scripts": {
     "start": "nodemon ./bin/www",
-    "build": "npx webpack -w",
     "build:css": "tailwindcss build src/css/tailwindImport.css -o src/css/tailwind.css"
   },
   "dependencies": {
